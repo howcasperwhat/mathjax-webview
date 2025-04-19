@@ -2,7 +2,7 @@
   "publisher": "howcasperwhat",
   "name": "mathjax-webview",
   "displayName": "MathJax Webview",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "A VSCode extensions to preview and edit MathJax in webview.",
   "author": "Casper Huang",
