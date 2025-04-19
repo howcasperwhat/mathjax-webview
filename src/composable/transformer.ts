@@ -3,7 +3,6 @@ import { HTMLDocument } from 'mathjax-full/js/handlers/html/HTMLDocument'
 import { HTMLMathItem } from 'mathjax-full/js/handlers/html/HTMLMathItem'
 import { TeX } from 'mathjax-full/js/input/tex'
 import { AllPackages } from 'mathjax-full/js/input/tex/AllPackages'
-
 import { SVG } from 'mathjax-full/js/output/svg'
 
 class Transformer {
