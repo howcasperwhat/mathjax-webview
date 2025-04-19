@@ -23,7 +23,7 @@
     "commands": [
       {
         "command": "mathjax-webview.show",
-        "title": "Webview Vue: Show"
+        "title": "MathJax Webview: Show"
       }
     ]
   },

@@ -4,7 +4,7 @@
 <img src="https://github.com/howcasperwhat/mathjax-webview/blob/main/assets/logo.png?raw=true" width="120" alt="logo" />
 </p>
 
-<h1 align="center">Mathjax Webview</h1>
+<h1 align="center">MathJax Webview</h1>
 
 <p align="center">
 <a href="https://marketplace.visualstudio.com/items?itemName=howcasperwhat.mathjax-webview" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/howcasperwhat.mathjax-webview.svg?color=blue&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
@@ -32,9 +32,9 @@ A VSCode extensions to edit preview MathJax in webview.
 
 <!-- commands -->
 
-| Command                | Title             |
-| ---------------------- | ----------------- |
-| `mathjax-webview.show` | Webview Vue: Show |
+| Command                | Title                 |
+| ---------------------- | --------------------- |
+| `mathjax-webview.show` | MathJax Webview: Show |
 
 <!-- commands -->
 
