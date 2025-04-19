@@ -17,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex-center" v-html="html" />
+  <div flex="~ items-center justify-center" v-html="html" />
 </template>
 
 <style scoped>
