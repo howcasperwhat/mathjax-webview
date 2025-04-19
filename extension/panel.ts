@@ -3,9 +3,15 @@ import { ViewColumn, window } from 'vscode'
 import * as config from './generated/meta'
 
 export class Panel {
+  private static instance?: Panel
+
+  public static singleton(context: ExtensionContext): Panel {
+    return (Panel.instance ??= new Panel(context))
+  }
+
   private panel: WebviewPanel
 
-  public constructor(context: ExtensionContext) {
+  private constructor(context: ExtensionContext) {
     this.panel = window.createWebviewPanel(
       config.name,
       config.displayName,
@@ -24,13 +30,16 @@ export class Panel {
       undefined,
       context.subscriptions,
     )
+    this.panel.onDidDispose(() => {
+      Panel.instance = undefined
+    }, null, context.subscriptions)
   }
 
-  public render() {
+  public render(tex: string) {
     this.panel.reveal(ViewColumn.One)
     this.panel.webview.postMessage({
       type: config.name,
-      data: config.description,
+      data: tex,
     })
   }
 }

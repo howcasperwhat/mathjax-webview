@@ -1,27 +1,24 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { transformer } from '../composable/transformer'
 
 const props = defineProps<{
   tex: string
 }>()
 
-const html = ref('')
+const html = ref(props.tex)
 
 onMounted(() => {
-  const element = transformer.from(props.tex).children[0]
-  html.value = element.outerHTML
+  watch(() => props.tex, () => {
+    const element = transformer.from(props.tex).children[0]
+    html.value = element.outerHTML
+  })
 })
 </script>
 
 <template>
-  <div class="container" v-html="html" />
+  <div class="flex-center" v-html="html" />
 </template>
 
-<style>
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+<style scoped>
 </style>

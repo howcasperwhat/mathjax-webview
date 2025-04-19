@@ -1,10 +1,12 @@
 import { defineExtension, useCommand } from 'reactive-vscode'
 import { Panel } from './panel'
 
+const DEFAULT_TEX = '\\mathrm{E=mc^2}'
+
 const { activate, deactivate } = defineExtension((context) => {
-  useCommand('mathjax-webview.show', () => {
-    const panel = new Panel(context)
-    panel.render()
+  useCommand('mathjax-webview.show', (tex: string = DEFAULT_TEX) => {
+    const panel = Panel.singleton(context)
+    panel.render(tex)
   })
 })
 
