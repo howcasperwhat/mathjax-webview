@@ -1,16 +1,10 @@
 <script setup lang="ts">
+import MathJax from './components/MathJax.vue'
 </script>
 
 <template>
-  <div class="container">
-    <h1>MathJax Webview</h1>
-  </div>
+  <MathJax tex="\frac{1}{x}" />
 </template>
 
 <style>
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 </style>
