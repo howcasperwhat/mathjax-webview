@@ -8,7 +8,7 @@ export class Panel {
   public constructor(context: ExtensionContext) {
     this.panel = window.createWebviewPanel(
       config.name,
-      config.name,
+      config.displayName,
       ViewColumn.One,
       { enableScripts: true },
     )

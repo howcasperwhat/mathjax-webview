@@ -1,24 +1,28 @@
 {
-  "publisher": "vscode-webview-vue-template-publisher",
-  "name": "vscode-webview-vue-template-name",
+  "publisher": "howcasperwhat",
+  "name": "mathjax-webview",
+  "displayName": "MathJax Webview",
   "version": "0.0.0",
   "private": true,
-  "description": "vscode-webview-vue-template-description",
+  "description": "A VSCode extensions to edit preview MathJax in webview.",
+  "author": "Casper Huang",
   "repository": {
     "type": "git",
-    "url": "https://github.com/howcasperwhat/vscode-webview-vue-template.git"
+    "url": "https://github.com/howcasperwhat/mathjax-webview.git"
   },
+  "categories": [
+    "Visualization"
+  ],
   "main": "dist/extension/index.js",
   "icon": "assets/logo.png",
   "engines": {
-    "node": ">=18",
-    "vscode": "^1.75.0"
+    "vscode": "^1.84.0"
   },
   "activationEvents": [],
   "contributes": {
     "commands": [
       {
-        "command": "vscode-webview-vue-template.show",
+        "command": "mathjax-webview.show",
         "title": "Webview Vue: Show"
       }
     ]

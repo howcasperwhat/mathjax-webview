@@ -3,7 +3,7 @@
 
 <template>
   <div class="container">
-    <h1>vscode-webview-vue-template-title</h1>
+    <h1>MathJax Webview</h1>
   </div>
 </template>
 

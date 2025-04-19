@@ -1,15 +1,15 @@
 <br>
 
-<h1 align="center">vscode-webview-vue-template-title</h1>
+<h1 align="center">MathJax Webview</h1>
 
 ## Introduction
 
-vscode-webview-vue-template-description
+A VSCode extensions to edit preview MathJax in webview.
 
 ## Feature
 
 <p align="center">
-<img src="https://github.com/howcasperwhat/vscode-webview-vue-template/blob/main/assets/logo.png?raw=true" alt="feature" width="120"/>
+<img src="https://github.com/howcasperwhat/mathjax-webview/blob/main/assets/logo.png?raw=true" alt="feature" width="120"/>
 </p>
 
 ## Usage
@@ -18,9 +18,9 @@ vscode-webview-vue-template-description
 
 <!-- commands -->
 
-| Command                            | Title             |
-| ---------------------------------- | ----------------- |
-| `vscode-webview-vue-template.show` | Webview Vue: Show |
+| Command                | Title             |
+| ---------------------- | ----------------- |
+| `mathjax-webview.show` | Webview Vue: Show |
 
 <!-- commands -->
 
