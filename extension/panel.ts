@@ -27,7 +27,7 @@ export class Panel {
       context,
     })
     this.panel.webview.onDidReceiveMessage(
-      message => {
+      (message) => {
         if (message.type === config.name) {
           this.isReady = true
           this.post(this.message)
@@ -42,12 +42,11 @@ export class Panel {
   }
 
   public post(data: string) {
-    !this.isReady
-      ? this.message = data
-      : this.panel.webview.postMessage({
-          type: config.name,
-          data,
-        })
+    this.message = data
+    this.isReady && this.panel.webview.postMessage({
+      type: config.name,
+      data: this.message,
+    })
   }
 
   private render() {

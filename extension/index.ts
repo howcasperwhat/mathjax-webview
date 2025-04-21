@@ -1,12 +1,12 @@
-import { defineExtension, useCommand } from 'reactive-vscode'
+import { defineExtension, useActiveTextEditor, useCommand, useTextEditorSelection } from 'reactive-vscode'
 import { Panel } from './panel'
 
-const DEFAULT_TEX = '\\mathrm{E=mc^2}'
-
-const { activate, deactivate } = defineExtension((context) => {
-  useCommand('mathjax-webview.show', (tex: string = DEFAULT_TEX) => {
+const { activate, deactivate } = defineExtension(async (context) => {
+  const editor = useActiveTextEditor()
+  const selection = useTextEditorSelection(editor)
+  useCommand('mathjax-webview.show', async (tex?: string) => {
     const panel = Panel.singleton(context)
-    panel.post(tex)
+    panel.post(tex ?? editor.value?.document.getText(selection.value) ?? '')
   })
 })
 
