@@ -53,7 +53,7 @@ A VSCode extensions to edit preview MathJax in webview.
 
 Code is under the [MIT License](https://github.com/howcasperwhat/mathjax-webview/blob/main/LICENSE).
 
-Logo using [carbon:function](https://github.com/carbon-design-system/carbon) and [fluent:toolbox-28-filled](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/Toolbox/SVG/ic_fluent_toolbox_28_filled.svg?short_path=009d427) as elements are under the [Apache License 2.0](https://github.com/carbon-design-system/carbon/blob/main/LICENSE) and [MIT License](https://github.com/microsoft/fluentui-system-icons/blob/main/LICENSE) respectively.
+Logo using [carbon:function](https://github.com/carbon-design-system/carbon) as an element is under the [Apache License 2.0](https://github.com/carbon-design-system/carbon/blob/main/LICENSE).
 
 ## Support
 

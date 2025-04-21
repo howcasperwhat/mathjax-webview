@@ -8,7 +8,13 @@ const model = defineModel<string>({ required: true })
 
 <template>
   <div flex="~ items-center justify-center">
-    <input v-model="model" :placeholder="placeholder">
+    <details w-full>
+      <textarea
+        v-model="model"
+        w-full h-60 bg-hex-0000
+        color-inherit resize-none
+      />
+    </details>
   </div>
 </template>
 

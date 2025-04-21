@@ -25,7 +25,27 @@
         "command": "mathjax-webview.show",
         "title": "MathJax Webview: Show"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mathjax-webview-container",
+          "title": "MathJax Webview",
+          "icon": "assets/logo.png"
+        }
+      ]
+    },
+    "views": {
+      "mathjax-webview-container": [
+        {
+          "icon": "assets/logo.png",
+          "id": "mathjax-webview",
+          "name": "MathJax Webview",
+          "type": "webview",
+          "contextualTitle": "MathJax Webview"
+        }
+      ]
+    }
   },
   "scripts": {
     "dev": "vite",
