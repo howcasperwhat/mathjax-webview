@@ -2,7 +2,7 @@
   "publisher": "howcasperwhat",
   "name": "mathjax-webview",
   "displayName": "MathJax Webview",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "description": "Preview and Edit MathJax in webview.",
   "author": "Casper Huang",
