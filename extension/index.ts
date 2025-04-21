@@ -6,7 +6,7 @@ const DEFAULT_TEX = '\\mathrm{E=mc^2}'
 const { activate, deactivate } = defineExtension((context) => {
   useCommand('mathjax-webview.show', (tex: string = DEFAULT_TEX) => {
     const panel = Panel.singleton(context)
-    panel.render(tex)
+    panel.post(tex)
   })
 })
 

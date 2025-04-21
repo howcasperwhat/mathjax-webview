@@ -4,14 +4,16 @@ import * as config from './generated/meta'
 
 export class Panel {
   private static instance?: Panel
-
-  public static singleton(context: ExtensionContext): Panel {
-    return (Panel.instance ??= new Panel(context))
+  public static singleton(context: ExtensionContext, message?: string): Panel {
+    return (Panel.instance ??= new Panel(context, message)).render()
   }
 
+  private isReady: boolean = false
   private panel: WebviewPanel
+  private message: string = ''
 
-  private constructor(context: ExtensionContext) {
+  private constructor(context: ExtensionContext, message?: string) {
+    this.message = message ?? ''
     this.panel = window.createWebviewPanel(
       config.name,
       config.displayName,
@@ -19,14 +21,18 @@ export class Panel {
       { enableScripts: true },
     )
     this.panel.webview.html = __getWebviewHtml__({
-      // DO NOT FIX THIS!
       // eslint-disable-next-line node/prefer-global/process
       serverUrl: process.env.VITE_DEV_SERVER_URL,
       webview: this.panel.webview,
       context,
     })
     this.panel.webview.onDidReceiveMessage(
-      message => window.showInformationMessage(message.data),
+      message => {
+        if (message.type === config.name) {
+          this.isReady = true
+          this.post(this.message)
+        }
+      },
       undefined,
       context.subscriptions,
     )
@@ -35,11 +41,17 @@ export class Panel {
     }, null, context.subscriptions)
   }
 
-  public render(tex: string) {
+  public post(data: string) {
+    !this.isReady
+      ? this.message = data
+      : this.panel.webview.postMessage({
+          type: config.name,
+          data,
+        })
+  }
+
+  private render() {
     this.panel.reveal(ViewColumn.One)
-    this.panel.webview.postMessage({
-      type: config.name,
-      data: tex,
-    })
+    return this
   }
 }

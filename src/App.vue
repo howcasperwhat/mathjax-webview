@@ -4,6 +4,8 @@ import Editor from './components/Editor.vue'
 import MathJax from './components/MathJax.vue'
 import * as config from './generated/meta'
 
+const extension = acquireVsCodeApi()
+
 const tex = ref('')
 function receive(event: MessageEvent) {
   const { type, data } = event.data
@@ -14,6 +16,7 @@ function receive(event: MessageEvent) {
 
 onMounted(() => {
   window.addEventListener('message', receive)
+  extension.postMessage({ type: config.name })
 })
 onUnmounted(() => {
   window.removeEventListener('message', receive)
