@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import Editor from './components/Editor.vue'
 import MathJax from './components/MathJax.vue'
+import ShikiEditor from './components/ShikiEditor.vue'
 import * as config from './generated/meta'
 
 const extension = acquireVsCodeApi()
+const element = ref<Element | null>(null)
 
 const tex = ref('')
 function receive(event: MessageEvent) {
@@ -24,8 +25,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <Editor v-model="tex" placeholder="Enter LaTeX here" />
-  <MathJax :tex="tex" />
+  <MathJax :tex="tex" @rendered="e => element = e" />
+  <ShikiEditor v-model="tex" />
 </template>
 
 <style>
