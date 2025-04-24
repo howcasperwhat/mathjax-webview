@@ -1,7 +1,7 @@
 <br>
 
 > [!WARNING]
-> Development is currently paused due to limitations in the VS Code API regarding clipboard access for non-text data (like images or rich formats) directly from Webviews. While copying SVG as text is possible via the extension host, implementing a direct "Copy as Image" feature from the webview is blocked by security restrictions ([see related VS Code issue discussion](https://github.com/microsoft/vscode/issues/77790#issuecomment-1066587519)).
+> Development is currently paused due to limitations in the VS Code API regarding clipboard access for non-text data (like images or rich formats). While copying SVG as text is possible via the extension host, implementing a direct "Copy as Image" feature from the webview hasn't been realized ([see related VS Code issue discussion](https://github.com/microsoft/vscode/issues/77790)).
 
 <p align="center">
 <img src="https://github.com/howcasperwhat/mathjax-webview/blob/main/assets/logo.png?raw=true" width="120" alt="logo" />
